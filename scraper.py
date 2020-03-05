@@ -10,8 +10,8 @@ colleges = {"580":("MIT",16),"1222":("Yale",23),"181":("CMU",28), "1085":("UChic
 
 for sid in colleges.keys():
     college,pages = colleges[sid]
-    print college
-    for i in xrange(1,pages+1):
+    print(college)
+    for i in range(1,pages+1):
         response = scraperwiki.scrape("http://www.ratemyprofessors.com/SelectTeacher.jsp?sid=%s&pageNo=%s" % (sid,str(i)))
         time.sleep(5)
         soup = BeautifulSoup(response)
